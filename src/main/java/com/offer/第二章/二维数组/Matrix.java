@@ -1,4 +1,4 @@
-package com.offer;
+package com.offer.第二章.二维数组;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ public class Matrix {
     @Test
     public void main(){
         int[][] array = new int[][]{{1,3,4,5},{8,9,10,11}};
-        System.out.println(find(array,0,array[0].length,10));
+        System.out.println(find(array,0,array[0].length,3));
     }
 
     public boolean find(int[][] matrix,int rows,int cols,int num)
