@@ -2,10 +2,7 @@ package com.offer.chapter5;
 
 import org.junit.Test;
 
-import javax.swing.*;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by zhangcheng on 2018/5/3.
@@ -15,7 +12,7 @@ public class Number29 {
     @Test
     public void test(){
         int[] num = {1,2,3,2,2,2,5,4,2};
-        System.out.println(findAppearOverHalf2(num));
+        System.out.println(findAppearOverHalf3(num));
     }
 
 
@@ -39,7 +36,15 @@ public class Number29 {
         }
         return numCopy[index];
     }
-    private int partition(int[] num, int left, int right){
+
+    /**
+     * 快排的partition算法可以找到第k个大的数
+     * @param num
+     * @param left
+     * @param right
+     * @return
+     */
+    public int partition(int[] num, int left, int right){
         int pivot = num[left];
         while (left < right){
             while(left < right && num[right] >= pivot)
@@ -55,6 +60,28 @@ public class Number29 {
     private boolean checkInvalidArray(int[] num){
         return num == null || num.length == 0;
     }
+
+    /**
+     * 因为出现次数超过数组长度一半的数字比其他数字出现次数和还要多。
+     * @param num
+     * @return
+     */
+    public int findAppearOverHalf3(int[] num){
+        if(checkInvalidArray(num))
+            return -1;
+        int index = 0,count = 0;
+        for (int i = 0; i < num.length; i++) {
+            if(count == 0){
+                index = i;
+                count++;
+            }else if(num[i] == num[index]){
+                count++;
+            }else
+                count--;
+        }
+        return num[index];
+    }
+
     /**
      * 在O(n)时间内返回出现次数超过数组一半的数（因为hash查找的时间复杂度是O(1)）
      * @param num
