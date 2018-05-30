@@ -3,6 +3,8 @@ package com.offer.chapter5;
 import com.offer.chapter2.listnode.ListNode;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * Created by zhangcheng on 2018/5/18.
  */
