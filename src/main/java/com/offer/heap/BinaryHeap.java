@@ -54,7 +54,7 @@ public class BinaryHeap {
             return ;
 
         HeapNode tmpNode = heapArray[index];
-        while (index < currentSize/2) {
+        while (index < currentSize >> 1) {
             int leftChildIndex = 2*index + 1;
             int rightChildIndex = leftChildIndex + 1;
 
