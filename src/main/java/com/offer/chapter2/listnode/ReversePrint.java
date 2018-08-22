@@ -14,12 +14,10 @@ public class ReversePrint {
         ListNode listNode = new ListNode(2);
         listNode.next = new ListNode(3);
         listNode.next.next = new ListNode(4);
-        reversePrint2(listNode);
+        reversePrint(listNode);
     }
     public void reversePrint(ListNode head)
     {
-        if(head == null)
-            return;
         if(head.next  != null)
             reversePrint(head.next);
         System.out.println(head.value);

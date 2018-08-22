@@ -26,7 +26,7 @@ public class Number28 {
             for(int i = index ; i < ch.length ; ++i){
                 swap(ch,index,i);
                 fullArrangeMent(ch,index+1);
-                swap(ch,index,i);
+                swap(ch,i,index);
             }
         }
     }

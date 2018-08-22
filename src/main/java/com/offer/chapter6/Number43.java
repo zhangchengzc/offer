@@ -10,8 +10,8 @@ public class Number43 {
 
     @Test
     public void test(){
-        getEachPercent(3);//递归解法
-        getEachPercent2(3);//循环解法
+        getEachPercent(5);//递归解法
+        getEachPercent2(5);//循环解法
     }
 
     /**
@@ -31,9 +31,9 @@ public class Number43 {
             for(int j=0;j < i; ++j)
                 array[1-flag][j] = 0;//因为num个骰子不可能出现和为0—(num-1)
             //得到新增的骰子每个和出现次数的数组
-            for(int j=i;j <= num*maxValue; ++j){
+            for(int j=i;j <= i*maxValue; ++j){
                 array[1-flag][j] = 0;//将和为j上的次数清空
-                for(int k = 1; k <= j && k <= maxValue; ++k)
+                for(int k = 1; k < j && k <= maxValue; ++k)
                     array[1-flag][j] += array[flag][j-k];
             }
             flag = 1 - flag;

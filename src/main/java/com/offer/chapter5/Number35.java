@@ -47,6 +47,14 @@ public class Number35 {
                 sl.append(input.charAt(i));
             }
         }
+
+        /*for (int i = 0; i < input.length(); i++) {
+            if(map.get(input.charAt(i)) == null)
+            {
+                sl.append(input.charAt(i));
+                map.put(input.charAt(i),true);
+            }
+        }*/
         return sl.toString();
     }
 }

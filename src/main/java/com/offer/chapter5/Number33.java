@@ -13,7 +13,7 @@ public class Number33 {
 
     @Test
     public void test(){
-        printMinNumber(new int[]{1});
+        printMinNumber(new int[]{3334,3,3333332});
     }
 
     /**
@@ -60,7 +60,12 @@ public class Number33 {
             if(o1.equals(o2.substring(0,o1.length())))
             {
                 if(o1.length() == 1)
-                    return o1.charAt(0) - o2.charAt(1);
+                {
+                    if(o1.charAt(0) == o2.charAt(1))
+                        return helpCompare(o1,o2.substring(1));
+                    else
+                        return o1.charAt(0) - o2.charAt(1);
+                }
                 if(o2.substring(o1.length()).length() < o1.length())
                     return -helpCompare(o2.substring(o1.length()),o1);
                 else

@@ -38,9 +38,7 @@ public class Number18 {
             if(pHead1.value == pHead2.value)
                 result = judge(pHead1,pHead2);
             if(!result)
-                result = isSubTree(pHead1.left,pHead2);
-            if(!result)
-                result = isSubTree(pHead1.right,pHead2);
+                result = isSubTree(pHead1.left,pHead2) || isSubTree(pHead1.right,pHead2);
         }
         return result;
     }

@@ -9,7 +9,7 @@ public class Number53 {
 
     @Test
     public void test(){
-        System.out.println(isMatch("aaa","a*a"));
+        System.out.println(isMatch("bbbba",".*a*a"));
     }
 
     public boolean isMatch(String str,String pattern){
@@ -34,9 +34,9 @@ public class Number53 {
         if(index2 == pattern.length() && index1 != str.length())
             return false;
         if(index2 < pattern.length()-1 && pattern.charAt(index2+1) == '*'){
-            if(str.charAt(index1) == pattern.charAt(index2) || (pattern.charAt(index2) == '.' && index1 != str.length()))
+            if((pattern.charAt(index2) == '.' && index1 != str.length()) || (index1 != str.length() && str.charAt(index1) == pattern.charAt(index2)))
                 return isMatch(str,index1+1,pattern,index2+2) ||
-                        isMatch(str,index1+1,pattern,index2);//*匹配一次多次
+                        isMatch(str,index1+1,pattern,index2) || isMatch(str,index1,pattern,index2+2);//*匹配一次多次或者不匹配
             else
                 return isMatch(str,index1,pattern,index2+2);
         }

@@ -18,7 +18,7 @@ public class BuildBinaryTree {
     public BinaryTreeNode buildPreIn(int[] preOrder,int[] inOrder,int preBegin,int preEnd,int inBegin,int inEnd){
         int num = preOrder[preBegin];
         BinaryTreeNode root = new BinaryTreeNode(preOrder[preBegin]);
-        if(preBegin<preEnd && inBegin < inEnd) {
+        if(preBegin < preEnd && inBegin < inEnd) {
 
             int index = 0;
             for (int i = inBegin; i <= inEnd; ++i) {

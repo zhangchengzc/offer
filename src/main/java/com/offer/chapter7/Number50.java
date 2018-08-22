@@ -17,11 +17,6 @@ public class Number50 {
      */
     @Test
     public void test(){
-        double a = 0.23111112222;
-        System.out.println((float) a);
-        long b = 2147483649l;
-        System.out.println((int)b);
-        System.out.println(Double.compare(0.1d,0.1f));
         int[] pre = {1,2,4,5,3,6,10,7,8};
         int[] in = {4,2,5,1,6,10,3,8,7};
         BinaryTreeNode head = new BuildBinaryTree().buildPreIn(pre,in,0,pre.length-1,0,in.length-1);

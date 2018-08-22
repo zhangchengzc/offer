@@ -2,6 +2,7 @@ package com.offer.tree;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Queue;
 
 /**
@@ -100,7 +101,6 @@ public class BinarySearchTree<T extends Comparable> implements Tree<T> {
         StringBuilder sb=new StringBuilder();
         //构建用于存放结点的栈
         Deque<BinaryNode<T>> stack=new ArrayDeque<>();
-
         BinaryNode<T> p=this.root;
 
         while (p!=null||!stack.isEmpty()){
