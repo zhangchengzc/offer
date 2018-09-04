@@ -1,21 +1,17 @@
 package com.offer.chapter2;
 
-import org.junit.Test;
-
-import java.util.List;
 
 /**
  * Created by zhangcheng on 2018/4/8.
  */
 public class RotateArray {
 
-    @Test
-    public void main(){
-        int[] array = new int[]{3,4,1,3,3,3,3};
+    public static void main(String[] args){
+        int[] array = new int[]{3,4,1,2};
         System.out.println(findMin(array,0,6));
     }
 
-    public int findMin(int[] array,int left,int right)
+    public static int findMin(int[] array,int left,int right)
     {
         if(array[left]<array[right])
             return array[left];
@@ -31,7 +27,7 @@ public class RotateArray {
             return array[right];
     }
 
-    public int minInOrder(int[] array,int left,int right)
+    public static int minInOrder(int[] array,int left,int right)
     {
         int min = array[left];
         for(int i = left+1;i<right;++i)
